@@ -3,6 +3,7 @@ const router = express.Router();
 const locMcd = require("../dataTable/loc_mcd");
 const locBcd = require("../dataTable/loc_bcd");
 const indCd = require("../dataTable/ind_cd");
+const IT = require("../dataTable/IT");
 
 // 2차 지역
 router.route("/loc_mcd").get((req, res) => {
@@ -34,6 +35,17 @@ router.route("/ind_cd").get((req, res) => {
 router.route("/ind_cd/:id").get((req, res) => {
   const { id } = req.params;
   const result = indCd.filter(({ code }) => code === Number(id));
+  res.send(result);
+});
+
+// IT 하위 직업
+router.route("/it").get((req, res) => {
+  res.send(IT);
+});
+
+router.route("/it/:id").get((req, res) => {
+  const { id } = req.params;
+  const result = IT.filter(({ code }) => code === Number(id));
   res.send(result);
 });
 

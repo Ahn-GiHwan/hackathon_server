@@ -48,7 +48,7 @@ router.route("/update/ids").patch((req, res) => {
   });
 });
 
-router.route("/delete").patch((req, res) => {
+router.route("/delete").delete((req, res) => {
   const { _id } = req.body;
 
   Set.deleteOne({ _id }, (err, set) => {

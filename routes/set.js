@@ -48,8 +48,8 @@ router.route("/update/ids").patch((req, res) => {
   });
 });
 
-router.route("/delete/:_id").patch((req, res) => {
-  const { _id } = req.params;
+router.route("/delete").patch((req, res) => {
+  const { _id } = req.body;
 
   Set.deleteOne({ _id }, (err, set) => {
     if (err) console.log(err);

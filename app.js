@@ -12,7 +12,7 @@ app.use(cors());
 // app.use("/public", express.static(__dirname + "/public"));
 
 mongoose
-  .connect(process.env.KEY, {
+  .connect(process.env.MONGO, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

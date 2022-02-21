@@ -30,11 +30,19 @@ router.route("/create").post((req, res) => {
   });
 });
 
-router.route("/update/:_id").patch((req, res) => {
-  const { _id } = req.params;
-  const { name, ids } = req.body;
+router.route("/update/name").patch((req, res) => {
+  const { name, _id } = req.body;
 
-  Set.updateOne({ _id }, { $set: { name, ids } }, (err, set) => {
+  Set.updateOne({ _id }, { $set: { name } }, (err, set) => {
+    if (err) console.log(err);
+    else res.redirect(`/set/${_id}`);
+  });
+});
+
+router.route("/update/ids").patch((req, res) => {
+  const { ids, _id } = req.body;
+
+  Set.updateOne({ _id }, { $set: { ids } }, (err, set) => {
     if (err) console.log(err);
     else res.redirect(`/set/${_id}`);
   });

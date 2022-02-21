@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const saramRouter = require("./routes/saram");
 const cors = require("cors");
+require('dotenv').config();
 
 const app = express();
 
@@ -20,6 +21,6 @@ mongoose
 
 app.use("/saram", saramRouter);
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 5555, () => {
   console.log("start server ");
 });

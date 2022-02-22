@@ -21,6 +21,7 @@ router.route("/loc_bcd").get((req, res) => {
   res.send(locBcd);
 });
 
+// 지역 상세 검색
 router.route("/loc_bcd/:id").get((req, res) => {
   const { id } = req.params;
   const result = locBcd.filter(({ code }) => code === Number(id));

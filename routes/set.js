@@ -17,6 +17,7 @@ router.route("/:_id").get((req, res) => {
   });
 });
 
+// set 만들기
 router.route("/create").post((req, res) => {
   const { name, ids } = req.body;
 

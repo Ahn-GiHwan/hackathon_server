@@ -20,6 +20,7 @@ router.route("/:id").get((req, res) => {
   }).then((response) => res.json(response.data));
 });
 
+// 직업
 router.route("/job/:job").get((req, res) => {
   const { job } = req.params;
   let code = null;

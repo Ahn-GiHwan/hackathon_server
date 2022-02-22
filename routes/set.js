@@ -35,7 +35,7 @@ router.route("/update/name").patch((req, res) => {
 
   Set.updateOne({ _id }, { $set: { name } }, (err, set) => {
     if (err) console.log(err);
-    else res.redirect(`/set/${_id}`);
+    else res.send({ success: true });
   });
 });
 
@@ -44,7 +44,7 @@ router.route("/update/ids").patch((req, res) => {
 
   Set.updateOne({ _id }, { $set: { ids } }, (err, set) => {
     if (err) console.log(err);
-    else res.redirect(`/set/${_id}`);
+    else res.send({ success: true });
   });
 });
 

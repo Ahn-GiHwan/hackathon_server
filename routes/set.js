@@ -53,7 +53,7 @@ router.route("/delete").delete((req, res) => {
 
   Set.deleteOne({ _id }, (err, set) => {
     if (err) console.log(err);
-    else res.redirect(`/set`);
+    else res.send({ success: true });
   });
 });
 
